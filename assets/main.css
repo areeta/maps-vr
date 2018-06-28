@@ -1,0 +1,98 @@
+.navbar {
+  position: static;
+    text-align: left;
+    /*align-content: center;*/
+    /*float: left;*/
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    background-color: #efa87a;
+    color: #a7b6d7;
+    border-style: solid;
+    border-color: #7d7ca4;
+    font-family: 'Karla', sans-serif;
+    
+
+}
+
+.contact{
+    font-family: 'Karla', sans-serif;
+
+}
+.title2{
+  font-family: 'Karla', sans-serif;
+  align-content: center;
+  text-align: center;
+  font-size: 100px;
+  /*padding-bottom: 50px;*/
+  margin-bottom: 70;
+  color: #7d7ca4;
+}
+
+.contact{
+    font-family: 'Karla', sans-serif;
+
+}
+
+h1{
+    font-family: 'Karla', sans-serif;
+
+}
+
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+  font-family: 'Karla', sans-serif;
+
+}
+
+#myUL {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#myUL li a {
+  border: 1px solid #ddd;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: #f6f6f6;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  font-family: 'Karla', sans-serif;
+  color: black;
+  display: block
+  
+}
+
+#myUL li a:hover:not(.header) {
+  background-color: #eee;
+}
+
+body{
+  /*background-image: url("https://digitalsynopsis.com/wp-content/uploads/2017/02/beautiful-color-gradients-backgrounds-091-eternal-constance.png");*/
+  background: linear-gradient(to right, #edb6b3, #e88588, #efa87a);
+}
+
+#text h1{
+  text-align: center;
+  font-family: 'Karla', sans-serif;
+
+}
+
+#text p{
+  font-family: 'Inconsolata', monospace;
+  text-align: center;
+}
+
+#text h2{
+  font-family: 'Permanent Marker', cursive;
+  text-align: center;
+  font-size: 50px;
+}
