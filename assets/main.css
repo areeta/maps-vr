@@ -1,42 +1,45 @@
-.navbar {
-  position: static;
-    text-align: left;
-    /*align-content: center;*/
-    /*float: left;*/
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 25px;
-    background-color: #efa87a;
-    color: #a7b6d7;
-    border-style: solid;
-    border-color: #7d7ca4;
-    font-family: 'Karla', sans-serif;
-    
-
-}
-
-.contact{
-    font-family: 'Karla', sans-serif;
-
-}
-.title2{
+* {
   font-family: 'Karla', sans-serif;
+}
+
+body {
+    font-family: 'Karla', sans-serif;
+    background-image: url("https://digitalsynopsis.com/wp-content/uploads/2017/02/beautiful-color-gradients-backgrounds-091-eternal-constance.png");
+    background: linear-gradient(to right, #edb6b3, #e88588, #efa87a);
+}
+
+body a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.topnav {
+  background-color: rgba(244, 244, 244, 0.9);
+  color: black;
+  width: 100%;
+  display: inline-flex;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  box-shadow: 0 0px 5px 2px #C0C0C0; 
+}
+  
+  .topnav a {
+    margin: 20px;
+    min-width: 120px;
+} 
+
+.title2{
   align-content: center;
   text-align: center;
   font-size: 100px;
-  /*padding-bottom: 50px;*/
+  padding-bottom: 50px;
   margin-bottom: 70;
   color: #7d7ca4;
-}
-
-.contact{
-    font-family: 'Karla', sans-serif;
-
-}
-
-h1{
-    font-family: 'Karla', sans-serif;
-
 }
 
 #myInput {
@@ -48,8 +51,6 @@ h1{
   padding: 12px 20px 12px 40px;
   border: 1px solid #ddd;
   margin-bottom: 12px;
-  font-family: 'Karla', sans-serif;
-
 }
 
 #myUL {
@@ -60,35 +61,29 @@ h1{
 
 #myUL li a {
   border: 1px solid #ddd;
-  margin-top: -1px; /* Prevent double borders */
+  margin-top: -1px;  
   background-color: #f6f6f6;
   padding: 12px;
   text-decoration: none;
   font-size: 18px;
-  font-family: 'Karla', sans-serif;
   color: black;
   display: block
-  
 }
 
 #myUL li a:hover:not(.header) {
   background-color: #eee;
 }
 
-body{
-  /*background-image: url("https://digitalsynopsis.com/wp-content/uploads/2017/02/beautiful-color-gradients-backgrounds-091-eternal-constance.png");*/
-  background: linear-gradient(to right, #edb6b3, #e88588, #efa87a);
-}
-
 #text h1{
-  text-align: center;
-  font-family: 'Karla', sans-serif;
-
+  text-align: left;
+  margin-left: 40px;
 }
 
 #text p{
   font-family: 'Inconsolata', monospace;
-  text-align: center;
+  text-align: left;
+  margin-left: 70px;
+  width: 70%;
 }
 
 #text h2{
@@ -96,3 +91,40 @@ body{
   text-align: center;
   font-size: 50px;
 }
+
+#team {
+  padding-bottom: 30px;
+  text-align: center; }
+  #team .title {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    color: #FAFAFA;
+    text-transform: uppercase; }
+  #team .content {
+    width: 80%;
+    margin: 0 auto; }
+    #team .content .teampic {
+      display: flex;
+      flex-wrap: wrap; }
+      #team .content .teampic .member {
+        flex: 21%;
+        width: 21%;
+        text-align: center;
+        margin-bottom: 20px; }
+        #team .content .teampic .member .name {
+          font-size: 1.2em;}
+        #team .content .teampic .member .crop {
+          width: 18vw;
+          max-width: 300px;
+          height: 18vw;
+          max-height: 300px;
+          overflow: hidden;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 50%;
+          margin: 0 auto;
+          margin-bottom: 10px; }
+        #team .content .teampic .member .crop img {
+          width: 100%;
+          border-radius: 50%; } 

@@ -3,12 +3,14 @@
     
 <head>
   <title>A-Frame</title>
-  <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script> 
+  <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
   <script src="https://unpkg.com/aframe-text-geometry-component@^0.5.0/dist/aframe-text-geometry-component.min.js"></script>
 </head>
 
 <body>
     <a-scene>
+        
+    <!--Assets-->
         <a-assets>
             <img id="pink" src="https://img.gs/bbdkhfbzkk/stretch/http://i.imgur.com/1hyyIUi.jpg" crossorigin="anonymous" />
             <img src="https://img.gs/bbdkhfbzkk/stretch/https://i.imgur.com/25P1geh.png" id="grid" crossorigin="anonymous">
@@ -18,7 +20,7 @@
             <a-asset-item id="exoFont" src="https://cdn.glitch.com/c719c986-c0c5-48b8-967c-3cd8b8aa17f3%2Fexo2Black.typeface.json?1490305922150"></a-asset-item>
             <a-asset-item id="exoItalicFont" src="https://cdn.glitch.com/c719c986-c0c5-48b8-967c-3cd8b8aa17f3%2Fexo2BlackItalic.typeface.json?1490305922725"></a-asset-item>
         </a-assets>
-        
+
     <!--Pointer-->
         <a-entity camera look-controls>
           <a-entity cursor="fuse: true; fuseTimeout: 500"
@@ -28,7 +30,7 @@
           </a-entity>
         </a-entity>
     
-    <!--Welcome to Maps VR    -->
+    <!--Welcome to Maps VR-->
         <a-entity position="-3 1 -6" rotation="5 0 0">
             <a-entity rotation="0 0 5" position="-0.4 0.676 0.272"
               text-geometry="value: Welcome to; font: #dawningFont; bevelEnabled: true; bevelSize: 0.1; bevelThickness: 0.05; curveSegments: 12; size: 1; height: 0;"
@@ -38,27 +40,51 @@
         </a-entity>
     
     <!--Background-->
-            <a-sky src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/sechelt.jpg"></a-sky>
-
-        
+        <a-sky id="sky-background" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/sechelt.jpg"></a-sky>
+            
     <!--Audio-->
-        <a-sound src="/assets/wiiMusic.mp3" autoplay="true" position="0 2 5"></a-sound>
+        <!--<a-sound src="/assets/wiiMusic.mp3" autoplay="true" position="0 2 5"></a-sound>-->
         
     <!--Button Options-->
         <a-entity id="bathroom-option" geometry="primitive: box" material="color: #ff8a22" position="-3.5 0 -5"></a-entity>
-            <a-text value="Hello, World!" position=""></a-text>
+            <a-text value="Bathroom" position="-3.95 0.25 -4.4"></a-text>
         <a-entity id="bunker-option" geometry="primitive: box" material="color: #f64242" position="-1.7 0 -5"></a-entity>
+            <a-text value="Bunker" position="-2.015 0.25 -4.4"></a-text>
         <a-entity id="cafe-option" geometry="primitive: box" material="color: #ba2644" position="0 0 -5"></a-entity>
+            <a-text value="Cafe" position="-0.246 0.25 -4.4"></a-text>
         <a-entity id="the-well-option" geometry="primitive: box" material="color: #49a9a6" position="1.7 0 -5"></a-entity>
-        <a-entity id="elevator-option" geometry="primitive: box" material="color: #a3e8dc" position="3.5 0 -5"></a-entity>
-    
+            <a-text value="The Well" position="1.235 0.24 -4.4"></a-text>
+        <a-entity id="elevator-option" geometry="primitive: box" material="color: #4169e1" position="3.5 0 -5"></a-entity>
+            <a-text value="Elevator" position="3 0.25 -4.4"></a-text> 
     </a-scene>
 </body>
 
 <script>
-    document.querySelector('#refresh-button').addEventListener('click', function() {
-        // Refresh stuff would go here!
+
+    document.querySelector('#bathroom-option').addEventListener('mousedown', function() {
+        document.querySelector('#sky-background').setAttribute('src', '/assets/aframe-pics/start.jpg')
+
     });
+    
+    document.querySelector('#bunker-option').addEventListener('mousedown', function() {
+        document.querySelector('#sky-background').setAttribute('src', '/assets/aframe-pics/start.jpg')
+
+    });
+    
+    document.querySelector('#cafe-option').addEventListener('mousedown', function() {
+        document.querySelector('#sky-background').setAttribute('src', '/assets/aframe-pics/start.jpg')
+    });
+    
+    document.querySelector('#the-well-option').addEventListener('mousedown', function() {
+        document.querySelector('#sky-background').setAttribute('src', '/assets/aframe-pics/start.jpg')
+
+    });
+    
+    document.querySelector('#elevator-option').addEventListener('mousedown', function() {
+        document.querySelector('#sky-background').setAttribute('src', '/assets/aframe-pics/start.jpg')
+
+    });
+    
 </script>
 
 </html>
