@@ -2,12 +2,27 @@
 <html>
     
 <head>
-  <title>A-Frame</title>
-  <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
-  <script src="https://unpkg.com/aframe-text-geometry-component@^0.5.0/dist/aframe-text-geometry-component.min.js"></script>
+    <title>A-Frame</title>
+    <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-text-geometry-component@^0.5.0/dist/aframe-text-geometry-component.min.js"></script>
+    <link rel="stylesheet" href="assets/main.css">
+    <script type="text/javascript" src="main.js"></script>
+    <meta charset="UTF-8"/>
+    <script src="assets/main.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link href="https://fonts.googleapis.com/css?family=Karla" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
 </head>
 
 <body>
+    <!--Navigation Bar-->
+            <div class="topnav" id="topnav">
+                <a href = "index.html" style="text-decoration: none">Home</a>
+                <a href="contact.html" style="text-decoration: none">Contact</a>
+                <a href="about.html"style="text-decoration: none">About</a>
+            </div>
     <a-scene>
         
     <!--Assets-->
@@ -31,7 +46,7 @@
         </a-entity>
     
     <!--Welcome to Maps VR-->
-        <a-entity position="-3 1 -6" rotation="5 0 0">
+        <a-entity position="-3 1 -6" rotation="5 0 0" id="opening">
             <a-entity rotation="0 0 5" position="-0.4 0.676 0.272"
               text-geometry="value: Welcome to; font: #dawningFont; bevelEnabled: true; bevelSize: 0.1; bevelThickness: 0.05; curveSegments: 12; size: 1; height: 0;"
               material="color:lavenderblush; metalness:1; roughness: 0; sphericalEnvMap: #pink;"></a-entity>
@@ -47,44 +62,177 @@
         
     <!--Button Options-->
         <a-entity id="bathroom-option" geometry="primitive: box" material="color: #ff8a22" position="-3.5 0 -5"></a-entity>
-            <a-text value="Bathroom" position="-3.95 0.25 -4.4"></a-text>
+            <a-text id="bathroom-text" value="Bathroom" position="-3.95 0.25 -4.4"></a-text>
         <a-entity id="bunker-option" geometry="primitive: box" material="color: #f64242" position="-1.7 0 -5"></a-entity>
-            <a-text value="Bunker" position="-2.015 0.25 -4.4"></a-text>
+            <a-text id="bunker-text" value="Bunker" position="-2.015 0.25 -4.4"></a-text>
         <a-entity id="cafe-option" geometry="primitive: box" material="color: #ba2644" position="0 0 -5"></a-entity>
-            <a-text value="Cafe" position="-0.246 0.25 -4.4"></a-text>
+            <a-text id="cafe-text" value="Cafe" position="-0.246 0.25 -4.4"></a-text>
         <a-entity id="the-well-option" geometry="primitive: box" material="color: #49a9a6" position="1.7 0 -5"></a-entity>
-            <a-text value="The Well" position="1.235 0.24 -4.4"></a-text>
+            <a-text id="the-well-text" value="The Well" position="1.235 0.24 -4.4"></a-text>
         <a-entity id="elevator-option" geometry="primitive: box" material="color: #4169e1" position="3.5 0 -5"></a-entity>
-            <a-text value="Elevator" position="3 0.25 -4.4"></a-text> 
+            <a-text id="elevator-text" value="Elevator" position="3 0.25 -4.4"></a-text> 
     </a-scene>
 </body>
 
 <script>
 
-    document.querySelector('#bathroom-option').addEventListener('mousedown', function() {
-        document.querySelector('#sky-background').setAttribute('src', '/assets/aframe-pics/start.jpg')
-
+    var mouseClicked = 0;
+    
+     document.querySelector('#bathroom-option').addEventListener('mouseup', function() {
+        changeToTheStart();
+        deleteBoxesAndText("bathroom");
     });
     
-    document.querySelector('#bunker-option').addEventListener('mousedown', function() {
-        document.querySelector('#sky-background').setAttribute('src', '/assets/aframe-pics/start.jpg')
-
+    document.querySelector('#bunker-option').addEventListener('mouseup', function() {
+        changeToTheStart();
+        deleteBoxesAndText("bunker");
     });
     
-    document.querySelector('#cafe-option').addEventListener('mousedown', function() {
-        document.querySelector('#sky-background').setAttribute('src', '/assets/aframe-pics/start.jpg')
+    document.querySelector('#cafe-option').addEventListener('mouseup', function() {
+        mouseClicked++;
+        changeToTheStart();
+        deleteBoxesAndText("cafe");
+        document.querySelector('#cafe-option').addEventListener('mouseup', function() { 
+            console.log(mouseClicked);
+            if (mouseClicked == 2) {
+                document.querySelector('#sky-background').setAttribute('src', 'assets/aframe-pics/tunnel.jpg');
+            }  else if (mouseClicked == 3) {
+                document.querySelector('#sky-background').setAttribute('src', 'assets/aframe-pics/outsideTunnel.jpg');
+            } else if (mouseClicked == 4) {
+                document.querySelector('#sky-background').setAttribute('src', 'assets/aframe-pics/elevator.jpg');
+            } else {
+                document.querySelector('#sky-background').setAttribute('src', 'assets/aframe-pics/cafe.jpg');
+            } 
+        });
     });
     
-    document.querySelector('#the-well-option').addEventListener('mousedown', function() {
-        document.querySelector('#sky-background').setAttribute('src', '/assets/aframe-pics/start.jpg')
-
+    document.querySelector('#the-well-option').addEventListener('mouseup', function() {
+        changeToTheStart();
+        deleteBoxesAndText("the-well");
     });
     
-    document.querySelector('#elevator-option').addEventListener('mousedown', function() {
-        document.querySelector('#sky-background').setAttribute('src', '/assets/aframe-pics/start.jpg')
-
+    document.querySelector('#elevator-option').addEventListener('mouseup', function() {
+        changeToTheStart();
+        deleteBoxesAndText("elevator");
     });
     
+    function changeToTheStart() {
+        //Changed to the start background + deleted the opening
+        document.querySelector('#sky-background').setAttribute('src', 'assets/aframe-pics/start.jpg');
+        var openHead = document.querySelector('#opening');
+        openHead.parentNode.removeChild(openHead);
+    }
+    
+    function deleteBoxesAndText(locationNotDeleted) {
+        
+       //Deleting all of the boxes
+       if (locationNotDeleted == "bathroom") {
+           
+            var box1 = document.querySelector('#cafe-option');
+            box1.parentNode.removeChild(box1);
+            var box2 = document.querySelector('#bunker-option');
+            box2.parentNode.removeChild(box2);
+            var box3 = document.querySelector('#the-well-option');
+            box3.parentNode.removeChild(box3);
+            var box4 = document.querySelector('#elevator-option');
+            box4.parentNode.removeChild(box4);
+            
+            //Deleting all of the texts
+            var cafe= document.querySelector('#cafe-text');
+            cafe.parentNode.removeChild(cafe);
+            var bunker = document.querySelector('#bunker-text');
+            bunker.parentNode.removeChild(bunker);
+            var theWell = document.querySelector('#the-well-text');
+            theWell.parentNode.removeChild(theWell);
+            var elevator = document.querySelector('#elevator-text');
+            elevator.parentNode.removeChild(elevator);
+            
+       } else if (locationNotDeleted == "cafe") {
+            
+            var box1 = document.querySelector('#bathroom-option');
+            box1.parentNode.removeChild(box1);
+            var box2 = document.querySelector('#bunker-option');
+            box2.parentNode.removeChild(box2);
+            var box3 = document.querySelector('#the-well-option');
+            box3.parentNode.removeChild(box3);
+            var box4 = document.querySelector('#elevator-option');
+            box4.parentNode.removeChild(box4);
+            
+            //Deleting all of the texts
+            var bathroom = document.querySelector('#bathroom-text');
+            bathroom.parentNode.removeChild(bathroom);
+            var bunker = document.querySelector('#bunker-text');
+            bunker.parentNode.removeChild(bunker);
+            var theWell = document.querySelector('#the-well-text');
+            theWell.parentNode.removeChild(theWell);
+            var elevator = document.querySelector('#elevator-text');
+            elevator.parentNode.removeChild(elevator);
+            
+      } else if (locationNotDeleted == "bunker") {
+            
+            var box1 = document.querySelector('#bathroom-option');
+            box1.parentNode.removeChild(box1);
+            var box2 = document.querySelector('#cafe-option');
+            box2.parentNode.removeChild(box2);
+            var box3 = document.querySelector('#the-well-option');
+            box3.parentNode.removeChild(box3);
+            var box4 = document.querySelector('#elevator-option');
+            box4.parentNode.removeChild(box4);
+            
+            //Deleting all of the texts
+            var bathroom = document.querySelector('#bathroom-text');
+            bathroom.parentNode.removeChild(bathroom);
+            var cafe = document.querySelector('#cafe-text');
+            cafe.parentNode.removeChild(cafe);
+            var theWell = document.querySelector('#the-well-text');
+            theWell.parentNode.removeChild(theWell);
+            var elevator = document.querySelector('#elevator-text');
+            elevator.parentNode.removeChild(elevator);
+            
+      } else if (locationNotDeleted == "the-well") {
+            
+            var box1 = document.querySelector('#bathroom-option');
+            box1.parentNode.removeChild(box1);
+            var box2 = document.querySelector('#cafe-option');
+            box2.parentNode.removeChild(box2);
+            var box3 = document.querySelector('#elevator-option');
+            box3.parentNode.removeChild(box3);
+            var box4 = document.querySelector('#bunker-option');
+            box4.parentNode.removeChild(box4);
+            
+            //Deleting all of the texts
+            var bathroom = document.querySelector('#bathroom-text');
+            bathroom.parentNode.removeChild(bathroom);
+            var cafe = document.querySelector('#cafe-text');
+            cafe.parentNode.removeChild(cafe);
+            var bunker = document.querySelector('#bunker-text');
+            bunker.parentNode.removeChild(bunker);
+            var elevator = document.querySelector('#elevator-text');
+            elevator.parentNode.removeChild(elevator);
+            
+      } else if (locationNotDeleted == "elevator") {
+            
+            var box1 = document.querySelector('#bathroom-option');
+            box1.parentNode.removeChild(box1);
+            var box2 = document.querySelector('#cafe-option');
+            box2.parentNode.removeChild(box2);
+            var box3 = document.querySelector('#the-well-option');
+            box3.parentNode.removeChild(box3);
+            var box4 = document.querySelector('#bunker-option');
+            box4.parentNode.removeChild(box4);
+            
+            //Deleting all of the texts
+            var bathroom = document.querySelector('#bathroom-text');
+            bathroom.parentNode.removeChild(bathroom);
+            var cafe = document.querySelector('#cafe-text');
+            cafe.parentNode.removeChild(cafe);
+            var theWell = document.querySelector('#the-well-text');
+            theWell.parentNode.removeChild(theWell);
+            var bunker = document.querySelector('#bunker-text');
+            bunker.parentNode.removeChild(bunker);
+      } 
+    }
 </script>
+
 
 </html>
