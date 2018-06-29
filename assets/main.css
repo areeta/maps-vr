@@ -139,4 +139,9 @@ body a {
     border-radius: 2px;
     padding: 10px;
     font-size: 1.8em;}
+    
+h2{
+    position: absolute;
+    top: 45px;
+}
    

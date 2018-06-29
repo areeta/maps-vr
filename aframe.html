@@ -79,13 +79,39 @@
     var mouseClicked = 0;
     
      document.querySelector('#bathroom-option').addEventListener('mouseup', function() {
+        mouseClicked++;
         changeToTheStart();
         deleteBoxesAndText("bathroom");
+        document.querySelector('#bathroom-option').addEventListener('mouseup', function() { 
+            if (mouseClicked == 3) {
+                document.querySelector('#sky-background').setAttribute('src', 'assets/aframe-pics/tunnel.jpg');
+            }  else if (mouseClicked == 4) {
+                document.querySelector('#sky-background').setAttribute('src', 'assets/aframe-pics/outsideTunnel.jpg');
+            } else if (mouseClicked == 5) {
+                document.querySelector('#sky-background').setAttribute('src', 'assets/aframe-pics/elevator.jpg');
+            } else if (mouseClicked == 6) {
+                document.querySelector('#sky-background').setAttribute('src', 'assets/aframe-pics/bathroom.jpg');
+            } 
+        });
     });
     
     document.querySelector('#bunker-option').addEventListener('mouseup', function() {
+        mouseClicked++;
         changeToTheStart();
         deleteBoxesAndText("bunker");
+        document.querySelector('#bunker-option').addEventListener('mouseup', function() { 
+            if (mouseClicked == 3) {
+                document.querySelector('#sky-background').setAttribute('src', 'assets/aframe-pics/tunnel.jpg');
+            }  else if (mouseClicked == 4) {
+                document.querySelector('#sky-background').setAttribute('src', 'assets/aframe-pics/outsideTunnel.jpg');
+            } else if (mouseClicked == 5) {
+                document.querySelector('#sky-background').setAttribute('src', 'assets/aframe-pics/elevator.jpg');
+            } else if (mouseClicked == 6) {
+                document.querySelector('#sky-background').setAttribute('src', 'assets/aframe-pics/bunkerFromElevator.jpg');
+            } else {
+                document.querySelector('#sky-background').setAttribute('src', 'assets/aframe-pics/bunker.jpg');
+            } 
+        });
     });
     
     document.querySelector('#cafe-option').addEventListener('mouseup', function() {
@@ -93,7 +119,6 @@
         changeToTheStart();
         deleteBoxesAndText("cafe");
         document.querySelector('#cafe-option').addEventListener('mouseup', function() { 
-            console.log(mouseClicked);
             if (mouseClicked == 2) {
                 document.querySelector('#sky-background').setAttribute('src', 'assets/aframe-pics/tunnel.jpg');
             }  else if (mouseClicked == 3) {
@@ -107,13 +132,37 @@
     });
     
     document.querySelector('#the-well-option').addEventListener('mouseup', function() {
+        mouseClicked++;
         changeToTheStart();
         deleteBoxesAndText("the-well");
+        document.querySelector('#the-well-option').addEventListener('mouseup', function() { 
+            if (mouseClicked == 3) {
+                document.querySelector('#sky-background').setAttribute('src', 'assets/aframe-pics/tunnel.jpg');
+            }  else if (mouseClicked == 4) {
+                document.querySelector('#sky-background').setAttribute('src', 'assets/aframe-pics/outsideTunnel.jpg');
+            } else if (mouseClicked == 5) {
+                document.querySelector('#sky-background').setAttribute('src', 'assets/aframe-pics/elevator.jpg');
+            } else if (mouseClicked == 6) {
+                document.querySelector('#sky-background').setAttribute('src', 'assets/aframe-pics/bunkerFromElevator.jpg');
+            } else {
+                document.querySelector('#sky-background').setAttribute('src', 'assets/aframe-pics/the-well.jpg');
+            } 
+        });
     });
     
     document.querySelector('#elevator-option').addEventListener('mouseup', function() {
+        mouseClicked++;
         changeToTheStart();
         deleteBoxesAndText("elevator");
+        document.querySelector('#elevator-option').addEventListener('mouseup', function() { 
+            if (mouseClicked == 3) {
+                document.querySelector('#sky-background').setAttribute('src', 'assets/aframe-pics/tunnel.jpg');
+            }  else if (mouseClicked == 4) {
+                document.querySelector('#sky-background').setAttribute('src', 'assets/aframe-pics/outsideTunnel.jpg');
+            } else {
+                document.querySelector('#sky-background').setAttribute('src', 'assets/aframe-pics/elevator.jpg');
+            } 
+        });
     });
     
     function changeToTheStart() {
