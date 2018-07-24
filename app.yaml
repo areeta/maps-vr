@@ -1,0 +1,20 @@
+#app.yaml
+runtime: python27
+api_version: 1
+threadsafe: true
+
+handlers:
+  - url: /assets
+    static_dir: assets
+  - url: /assets/profile-pics
+    static_dir: profile-pics
+  - url: /assets/aframe-pics
+    static_dir: aframe-pics
+  - url: /templates
+    static_dir: templates
+  - url: /.*        # anything I pass in goes to main.app --> a catch all
+    script: main.app
+
+libraries:
+  - name: jinja2
+    version: latest

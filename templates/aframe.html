@@ -4,7 +4,7 @@
     <title>A-Frame</title>
     <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-text-geometry-component@^0.5.0/dist/aframe-text-geometry-component.min.js"></script>
-    <link rel="stylesheet" href="assets/main.css">
+    <link rel="stylesheet" href="/assets/main.css">
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <link href="https://fonts.googleapis.com/css?family=Karla" rel="stylesheet">
@@ -21,7 +21,7 @@
                 <a href="about.html"style="text-decoration: none">About</a>
             </div>
     <a-scene>
-        
+
     <!--Assets-->
         <a-assets>
             <img id="pink" src="https://img.gs/bbdkhfbzkk/stretch/http://i.imgur.com/1hyyIUi.jpg" crossorigin="anonymous" />
@@ -41,7 +41,7 @@
                     material="color: white; shader: flat">
           </a-entity>
         </a-entity>
-    
+
     <!--Welcome to Maps VR-->
         <a-entity position="-3 1 -6" rotation="5 0 0" id="opening">
             <a-entity rotation="0 0 5" position="-0.4 0.676 0.272"
@@ -50,13 +50,13 @@
             <a-entity position="-1.69 -4.58 -1.48" scale="0.6 1.2 1" text-geometry="value: M a p s; font: #exoFont; bevelEnabled: true; bevelSize: 0.1; bevelThickness: 0.1; curveSegments: 1; size: 1.5; height: 0.5;" material="color:pink; metalness:0.9; roughness: 0.05; sphericalEnvMap: #chrome;"></a-entity>
             <a-entity position="4.8 -4.59 -1.28" scale="0.6 1.2 1" text-geometry="value: V R; font: #exoFont; bevelEnabled: true; bevelSize: 0.1; bevelThickness: 0.1; curveSegments: 1; size: 1.5; height: 0.5;" material="color:pink; metalness:0.9; roughness: 0.05; sphericalEnvMap: #chrome;"></a-entity>
         </a-entity>
-    
+
     <!--Background-->
         <a-sky id="sky-background" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/sechelt.jpg"></a-sky>
-            
+
     <!--Audio-->
         <a-sound src="/assets/wiiMusic.mp3" autoplay="true" position="0 2 5"></a-sound>
-        
+
     <!--Button Options-->
         <a-entity id="bathroom-option" geometry="primitive: box" material="color: #ff8a22" position="-3.5 0 -5"></a-entity>
             <a-text id="bathroom-text" value="Bathroom" position="-3.95 0.25 -4.4"></a-text>
@@ -67,10 +67,10 @@
         <a-entity id="the-well-option" geometry="primitive: box" material="color: #49a9a6" position="1.7 0 -5"></a-entity>
             <a-text id="the-well-text" value="The Well" position="1.235 0.24 -4.4"></a-text>
         <a-entity id="elevator-option" geometry="primitive: box" material="color: #4169e1" position="3.5 0 -5"></a-entity>
-            <a-text id="elevator-text" value="Elevator" position="3 0.25 -4.4"></a-text> 
+            <a-text id="elevator-text" value="Elevator" position="3 0.25 -4.4"></a-text>
     </a-scene>
-    
+
     <script type="text/javascript" src="assets/main.js"></script>
-    
+
 </body>
 </html>
