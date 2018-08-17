@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>A-Frame</title>
+    <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-text-geometry-component@^0.5.0/dist/aframe-text-geometry-component.min.js"></script>
+    <link rel="stylesheet" href="/assets/main.css">
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link href="https://fonts.googleapis.com/css?family=Karla" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+</head>
+
+<body>
+    <!--Navigation Bar-->
+            <div class="topnav" id="topnav">
+                <a href = "index.html" style="text-decoration: none">Home</a>
+                <a href="contact.html" style="text-decoration: none">Contact</a>
+                <a href="about.html"style="text-decoration: none">About</a>
+            </div>
+    <a-scene>
+
+    <!--Assets-->
+        <a-assets>
+            <img id="pink" src="https://img.gs/bbdkhfbzkk/stretch/http://i.imgur.com/1hyyIUi.jpg" crossorigin="anonymous" />
+            <img src="https://img.gs/bbdkhfbzkk/stretch/https://i.imgur.com/25P1geh.png" id="grid" crossorigin="anonymous">
+            <img src="https://img.gs/bbdkhfbzkk/2048x1024,stretch/http://i.imgur.com/WMNH2OF.jpg" id="chrome" crossorigin="anonymous">
+            <img id="sky" src="https://img.gs/bbdkhfbzkk/2048x2048,stretch/http://i.imgur.com/WqlqEkq.jpg" crossorigin="anonymous" />
+            <a-asset-item id="dawningFont" src="https://cdn.glitch.com/c719c986-c0c5-48b8-967c-3cd8b8aa17f3%2FdawningOfANewDayRegular.typeface.json?1490305922844"></a-asset-item>
+            <a-asset-item id="exoFont" src="https://cdn.glitch.com/c719c986-c0c5-48b8-967c-3cd8b8aa17f3%2Fexo2Black.typeface.json?1490305922150"></a-asset-item>
+            <a-asset-item id="exoItalicFont" src="https://cdn.glitch.com/c719c986-c0c5-48b8-967c-3cd8b8aa17f3%2Fexo2BlackItalic.typeface.json?1490305922725"></a-asset-item>
+        </a-assets>
+
+    <!--Pointer-->
+        <a-entity camera look-controls>
+          <a-entity cursor="fuse: true; fuseTimeout: 500"
+                    position="0 0 -1"
+                    geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
+                    material="color: white; shader: flat">
+          </a-entity>
+        </a-entity>
+
+    <!--Welcome to Maps VR-->
+        <a-entity position="-3 1 -6" rotation="5 0 0" id="opening">
+            <a-entity rotation="0 0 5" position="-0.4 0.676 0.272"
+              text-geometry="value: Welcome to; font: #dawningFont; bevelEnabled: true; bevelSize: 0.1; bevelThickness: 0.05; curveSegments: 12; size: 1; height: 0;"
+              material="color:lavenderblush; metalness:1; roughness: 0; sphericalEnvMap: #pink;"></a-entity>
+            <a-entity position="-1.69 -4.58 -1.48" scale="0.6 1.2 1" text-geometry="value: M a p s; font: #exoFont; bevelEnabled: true; bevelSize: 0.1; bevelThickness: 0.1; curveSegments: 1; size: 1.5; height: 0.5;" material="color:pink; metalness:0.9; roughness: 0.05; sphericalEnvMap: #chrome;"></a-entity>
+            <a-entity position="4.8 -4.59 -1.28" scale="0.6 1.2 1" text-geometry="value: V R; font: #exoFont; bevelEnabled: true; bevelSize: 0.1; bevelThickness: 0.1; curveSegments: 1; size: 1.5; height: 0.5;" material="color:pink; metalness:0.9; roughness: 0.05; sphericalEnvMap: #chrome;"></a-entity>
+        </a-entity>
+
+    <!--Background-->
+        <a-sky id="sky-background" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/sechelt.jpg"></a-sky>
+
+    <!--Audio-->
+        <a-sound src="/assets/wiiMusic.mp3" autoplay="true" position="0 2 5"></a-sound>
+
+    <!--Button Options-->
+        <a-entity id="bathroom-option" geometry="primitive: box" material="color: #ff8a22" position="-3.5 0 -5"></a-entity>
+            <a-text id="bathroom-text" value="Bathroom" position="-3.95 0.25 -4.4"></a-text>
+        <a-entity id="bunker-option" geometry="primitive: box" material="color: #f64242" position="-1.7 0 -5"></a-entity>
+            <a-text id="bunker-text" value="Bunker" position="-2.015 0.25 -4.4"></a-text>
+        <a-entity id="cafe-option" geometry="primitive: box" material="color: #ba2644" position="0 0 -5"></a-entity>
+            <a-text id="cafe-text" value="Cafe" position="-0.246 0.25 -4.4"></a-text>
+        <a-entity id="the-well-option" geometry="primitive: box" material="color: #49a9a6" position="1.7 0 -5"></a-entity>
+            <a-text id="the-well-text" value="The Well" position="1.235 0.24 -4.4"></a-text>
+        <a-entity id="elevator-option" geometry="primitive: box" material="color: #4169e1" position="3.5 0 -5"></a-entity>
+            <a-text id="elevator-text" value="Elevator" position="3 0.25 -4.4"></a-text>
+    </a-scene>
+
+    <script type="text/javascript" src="/assets/main.js"></script>
+
+</body>
+</html>
